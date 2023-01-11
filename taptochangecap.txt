@@ -1,0 +1,16 @@
+// TapToChange.js
+//@input Component.ScriptComponent baseballCapController
+var index = 1;
+var tiltValue = 0;
+function tap()
+{
+if(tiltValue < 1){
+tiltValue++;
+}else{
+tiltValue = -1;
+}
+print(tiltValue);
+script.baseballCapController.api.changeTilt(tiltValue);
+}
+var tapEvent = script.createEvent("TapEvent");
+tapEvent.bind(tap);
